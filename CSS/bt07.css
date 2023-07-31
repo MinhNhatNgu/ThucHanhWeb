@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    height: 150px;
+    line-height: 150px;
+    font-size: 3em;
+    text-align: center;
+    color:yellow;
+    text-shadow: 5px 5px 2px red;
+    background-color:lightslategray;
+}
+
+.nav {
+    height: 40px;
+    background-color:rgb(27, 168, 168);
+    text-align: center;
+    line-height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left, .right {
+    width: 15%;
+    min-height: 600px;
+    background-color:cadetblue;
+}
+
+.content {
+    width:70%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.content .row {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+.content .row div {
+    width: 50%;
+    height: 80%;
+    padding: 15px;
+    margin: 10px;
+    overflow: auto;
+    border: 1px dotted gray;
+}
+
+.footer {
+    height: 30px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* Nav menu*/
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: yellow;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    background-color:rgb(11, 133, 96);
+}
+
+.submenu {
+    position: absolute;
+    display: none;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.left {
+    color : white;
+    
+}
+
+.left .block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.left .title {
+    background-color: blue;
+}
