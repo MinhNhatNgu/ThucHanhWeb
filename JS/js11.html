@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .small {
+        width:100px;
+        height:56px;
+    }
+    .medium {
+        width:250px;
+        height:140px;
+    }
+    .large {
+        width:500px;
+        height:281px;
+    }
+    .full {
+        width:1000px;
+        height:563px;
+    }
+</style>
+<script>
+    function scaler(value) {
+        document.querySelector("#img").className = value;
+    }
+</script>
+<body>
+    <h1>Image Resizing</h1><hr>
+    <p>
+        Scale: 
+        <input type="radio" name="resize" value="small" onclick="scaler(this.value)">10%
+        <input type="radio" name="resize" value="medium" onclick="scaler(this.value)">25%
+        <input type="radio" name="resize" value="large" onclick="scaler(this.value)" checked>50%
+        <input type="radio" name="resize" value="full" onclick="scaler(this.value)">100%
+    </p>
+    <img src="../Images/img.jpg" alt="anh phong canh" class="large" id="img">
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function handlerTitle() {
+        var title = document.querySelector("#title").innerHTML;
+        title = title.substr(1) + title.substr(0,1);
+        document.querySelector("#title").innerHTML = title;
+
+    }
+    function origin() {
+        document.querySelector("#s1").value = originStr;
+    }
+
+    function normal() {
+        var s1 = document.querySelector("#s1").value;
+        s1 = s1.toLowerCase();
+        var arr = s1.split(" ");
+        var kq="";
+        for(var i=0; i<arr.length; i++) {
+            if(arr[i]!="") {
+                var temp = arr[i];
+                temp = temp.substr(0,1).toUpperCase() + temp.substr(1);
+                kq += temp + " ";
+            }
+        }
+        document.querySelector("#s1").value = kq.trim();
+    }
+
+    function reverse() {
+        var s1 = document.querySelector("#s1").value;
+        var arr = s1.split(" ");
+        arr = arr.reverse().join(" ");
+        document.querySelector("#s1").value = arr;
+    }
+
+    function replace() {
+        var s1 = document.querySelector("#s1").value;
+        var s2 = document.querySelector("#s2").value;
+        var s3 = document.querySelector("#s3").value;
+        var token = new RegExp(s2,"ig");
+        s1 = s1.replace(token,s3);
+        document.querySelector("#s1").value = s1;
+    }
+
+    function deleteStr() {
+        var s1 = document.querySelector("#s1").value;
+        var s2 = document.querySelector("#s2").value;
+        var token = new RegExp(s2,"ig");
+        s1 = s1.replace(token,"");
+        document.querySelector("#s1").value = s1;
+    }
+
+    function insert() {
+        var s1 = document.querySelector("#s1").value;
+        var s2 = document.querySelector("#s2").value;
+        var pos = document.querySelector("#pos").value;
+        var text = s1.slice(0,pos) + s2 + s1.slice(pos);
+        if(s2=="") {
+            alert("Nhap chuoi S2");
+            return false;
+        }
+        if(pos=="") {
+            alert("Nhap vi tri");
+        }
+        document.querySelector("#s1").value = text;
+
+    }
+</script>
+<body>
+    <table>
+        <caption><h2 id="title">CHƯƠNG TRÌNH XỬ LÝ CHUỖI </h2></caption>
+        <tr>
+            <td>Chuỗi S1:</td>
+            <td><input type="text" id="s1" size="50" value="Learning    JAVASCRIPT   is  veRy   esay"></td>
+        </tr>
+        <tr>
+            <td>Chuỗi S2:</td>
+            <td><input type="text" id="s2" size="50" value="javascript"></td>
+        </tr>
+        <tr>
+            <td>Chuỗi S3:</td>
+            <td><input type="text" id="s3" size="50" value="jQuery"></td>
+        </tr>
+        <tr>
+            <td>Vị trí chèn</td>    
+            <td><input type="number" id="pos" value="0" ></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="normal()">Chuẩn hóa chuỗi</button>
+                <button onclick="reverse()">Đảo chuỗi</button>
+                <button onclick="origin()">Khôi phục</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="replace()">Thay thế S2 bằng S3</button>
+                <button onclick="insert()">Chèn S2 vào S1</button>
+                <button onclick="deleteStr()">Xóa S2 trong S1</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        var originStr = document.querySelector("#s1").value;
+        console.log(originStr);
+        setInterval(handlerTitle,200);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box {
+        background-color: #ff0000;
+        color:#ffff00;
+        width:80%;
+        height:400px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 400px;
+        font-size: 50px;
+    }
+</style>
+<script>
+    function handler() {
+        bgcolor = document.querySelector("#bg-color").value;
+        textcolor = document.querySelector("#text-color").value;
+        document.querySelector("#text").innerHTML = document.querySelector("#text-box").value;
+        document.querySelector("#text").style.backgroundColor = bgcolor;
+        document.querySelector("#text").style.color = textcolor;
+    }
+</script>
+<body>
+    <div id="box">
+        <div id="text">WELCOME HTML 5!</div>
+    </div>
+    <p>
+        Nhập nội dung chữ:
+        <input type="text" id="text-box" value="WELCOME HTML 5!" autofocus>
+    </p>
+    <p>
+        Màu nền:
+        <input type="color" id="bg-color" value="#ff0000">
+    </p>
+    <p>
+        Màu chữ:
+        <input type="color" id="text-color" value="#ffff00">
+    </p>
+    <button onclick="handler()">Thực hiện</button>
+</body>
+</html>

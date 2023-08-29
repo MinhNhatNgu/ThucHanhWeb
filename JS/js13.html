@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<body>
+    <fieldset>
+        <legend>Chart type</legend>
+        <input type="radio" name="type" value="pie" checked>Pie
+        <input type="radio" name="type" value="line">Line
+        <input type="radio" name="type" value="column">Column
+    </fieldset>
+    <p>
+        <label for="title">Title: </label>
+        <input type="text" id="title" size="50" required value="Gioi, Kha, Yeu"><br><br>
+        <label for="value">Value: </label>
+        <input type="text" id="value" size="50" required value="10,50,40"><br><br>
+        <button onclick="draw()">Draw Chart</button>
+    </p>
+    <div id="myChart" style="max-width:600px; height:400px"></div>
+    <script>
+        var arrTitle = [];
+        var arrValue = [];
+        var data;
+        function draw() {
+            arrTitle = document.querySelector("#title").value.split(",");
+            arrValue = document.querySelector("#value").value.split(",");
+            var type = document.querySelector("input[name='type']:checked").value;
+            console.log(type);
+            if(type=="pie") {
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(draw_pie);
+            } else if(type=="line") {
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(draw_line);
+            } else {
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(draw_column);
+            }
+        }
+        
+        //pie
+        function draw_pie() {
+            // set data
+            var data = new google.visualization.DataTable();
+            data.addColumn('string','Title');
+            data.addColumn('number','Value');
+            for(var i=0; i<arrValue.length; i++) {
+                var arr = [];
+                arr[0] = arrTitle[i];
+                arr[1] = Number(arrValue[i]);
+                data.addRows([arr]);
+            }
+
+            //set option
+            var opt = {
+                title: "Kết Quả Học Tập",
+                is3D: true
+            };
+
+            //draw
+            var chart = new google.visualization.PieChart(document.querySelector("#myChart"));
+            chart.draw(data,opt);
+        }
+
+        //Line
+        function draw_line() {
+            //set data
+            var data = new google.visualization.DataTable();
+            data.addColumn('string','Title');
+            data.addColumn('number','Value');
+            for(var i=0; i<arrValue.length; i++) {
+                var arr = [];
+                arr[0] = arrTitle[i];
+                arr[1] = Number(arrValue[i]);
+                data.addRows([arr]);
+            }
+
+            //set option
+            var opt = {
+                title: "Kết Quả Học Tập",
+                hAxis: {title:"Học Lực"},
+                vAxis: {title:"Số Lượng"}
+            }
+
+            //draw
+            var chart = new google.visualization.LineChart(document.querySelector("#myChart"));
+            chart.draw(data,opt);
+        }
+
+        //Column
+        function draw_column() {
+            // set data
+            var data = new google.visualization.DataTable();
+            data.addColumn('string','Title');
+            data.addColumn('number','Value');
+            for(var i=0; i<arrValue.length; i++) {
+                var arr = [];
+                arr[0] = arrTitle[i];
+                arr[1] = Number(arrValue[i]);
+                data.addRows([arr]);
+            }
+
+            //set option
+            var opt = {
+                title: "Kết Quả Học Tập",
+            };
+
+            //draw
+            var chart = new google.visualization.BarChart(document.querySelector("#myChart"));
+            chart.draw(data,opt);
+        }
+    </script>
+</body>
+</html>

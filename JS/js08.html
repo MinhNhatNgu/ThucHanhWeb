@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function statistic() {
+        var text = document.querySelector("#inp").value;
+        var char = text.length;
+        var arr = text.split(" ");
+        var count = 0;
+        for(var i=0; i<arr.length; i++) {
+            if(arr[i].trim()!="") {
+                count++
+            }
+        }
+        var arrKq = [];
+        for(var i=0; i<128; i++) {
+            arrKq[i] = 0;
+        }
+        for(var i=0; i<text.length; i++) {
+            if(text[i]>='a' && text[i]<='z') {
+                arrKq[text.charCodeAt(i)-32]++;
+            } else {
+                arrKq[text.charCodeAt(i)]++;
+            }
+        }
+        var kq = "Characters: " + char + "<br>" + "Words: " + count + "<br>";
+        for(var i=0; i<128; i++) {
+            if(arrKq[i]>0) {
+                kq += "Character ' " + String.fromCharCode(i) + " ': " + arrKq[i] + "<br>";
+            } 
+        }
+        document.querySelector("#kq").innerHTML = kq;
+    }
+</script>
+<body>
+    <table>
+        <caption><h2>String Statistic</h2></caption>
+        <tr>
+            <td>String:</td>
+            <td>
+                <input type="text" id="inp" size="50" value="Hello, how are you? 1123425">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="statistic()">Statistic</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="kq"></td>
+        </tr>
+
+    </table>
+</body>
+</html>

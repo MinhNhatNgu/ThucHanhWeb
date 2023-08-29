@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function Handler() {
+        var num1 = parseInt(document.forms["forms"]["firstNum"].value);
+        var num2 = parseInt(document.forms["forms"]["secondNum"].value);
+        var op = document.forms["forms"]["op"].value;
+        var kq;
+        switch(op) {
+            case '+': kq = num1 + num2;
+            break;
+            case '-': kq = num1 - num2;
+            break;
+            case '*': kq = num1 * num2;
+            break;
+            case '/': {
+                if(num2 == 0) {
+                    kq = "Không thể chia cho 0";
+                } else {
+                    kq = (num1 / num2).toFixed(2);
+                }
+            }
+            break;
+        }
+        document.forms["forms"]["kq"].value = kq;
+        return false;
+    }
+</script>
+<body>
+    <form id="forms" onsubmit="return Handler()">
+        <table align="center" border="1px">
+            <caption><h2>CÁC PHÉP TÍNH SỐ HỌC</h2></caption>
+            <tr>
+                <td width="150px">Số thứ nhất</td>
+                <td><input type="text" name="firstNum"></td>
+            </tr>
+            <tr>
+                <td width="150px">Số thứ hai</td>
+                <td><input type="text" name="secondNum"></td>
+            </tr>
+            <tr>
+                <td>Các phép toán</td>
+                <td>
+                    <input type="radio" name="op" value="+">+ <br>
+                    <input type="radio" name="op" value="-">- <br>
+                    <input type="radio" name="op" value="*">* <br>
+                    <input type="radio" name="op" value="/" checked>/ <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Thực hiện">
+                    <input type="reset" value="Hủy">
+                </td>
+                <td>
+                    <input type="text" name="kq" readonly >
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

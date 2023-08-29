@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td,table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 2px;
+    }
+    caption {
+        font-size: 1.5em;
+        font-weight: 800;
+    }
+    table {
+        margin: 0 auto;
+    }
+</style>
+<script>
+    function regester() {
+        var name = document.forms.reg["name"].value;
+        var pw = document.forms.reg["pw"].value;
+        var ns = document.forms.reg["date"].value;
+        var currentDate = new Date();
+        var date = new Date(ns);
+        var years = currentDate.getFullYear() - date.getFullYear();
+        var gt = document.forms.reg["gt"].value;
+        var problem = document.forms.reg["problem"].value;
+        document.forms.reg["info"].value = `Chào mừng ${name}\nBạn là ${gt}\nMật khẩu của bạn có ${pw.length} kí tự\nTuổi của bạn là ${years}\nVấn đề bạn quan tâm là ${problem}`;
+        return false;
+    }
+</script>
+<body>
+    <form id="reg" onsubmit="return regester()">
+        <table>
+            <caption>
+                ĐĂNG KÍ THÀNH VIÊN
+            </caption>
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td>
+                    <input type="text" name="name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td>
+                    <input type="password" name="pw" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td>
+                    <input type="date" name="date" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <input type="radio" value="Nam" name="gt" checked>Nam
+                    <input type="radio" value="Nữ" name="gt">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Vấn đề bạn quan tâm</td>
+                <td>
+                    <select name="problem">
+                        <option value="Kinh tế">Kinh tế</option>
+                        <option value="Thể thao">Thể thao</option>
+                        <option value="Văn học và nghệ thuật">Văn học và nghệ thuật</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Đăng kí">
+                </td>
+                <td>
+                    <input type="reset" value="Hủy">
+                </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                   <textarea name="info" cols="40" rows="6"></textarea>
+               </td> 
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
