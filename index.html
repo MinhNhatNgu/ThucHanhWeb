@@ -1,31 +1,71 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Ứng dụng web</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2 style="text-align: center">Danh mục sách</h2>
-	<div style="text-align: center;">
-		<div style="display: inline-block;">
-			<h3><a href="web.html">HTML</a></h3>
-			<img src="./Images/html.jpg" width="120px" height="180px" >
-		</div>
-		<div style="display: inline-block;">
-			<h3><a href="css.html">CSS</a></h3>
-			<img src="./Images/css.jpg" width="120px" height="180px">
-		</div>
-		<div style="display: inline-block;">
-			<h3><a href="javascript.html">Javascript</a></h3>
-			<img src="./Images/javascript.jpg" width="120px" height="180px">
-		</div>
-		<div style="display: inline-block;">
-			<h3><a href="jquery.html">jQuery</a></h3>
-			<img src="./Images/jQuery.jpg" width="120px" height="180px">
-		</div>
-	</div>
+    <div class="main">
+        <div class="banner">DIỄN ĐÀN CÔNG NGHỆ THÔNG TIN</div>
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tin tức</a>
+                    <ul class="submenu">
+                        <li><a href="#">Công nghệ</a></li>
+                        <li><a href="#">Phần mềm</a></li>
+                        <li><a href="#">Phần cứng</a></li>
+                        <li><a href="#">Việc làm</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="left">
+                <ul>
+                    <li class="block">
+                        <div class="title">Ngôn ngữ lập trình</div>
+                        <ul class="desc">
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>PHP</li>
+                            <li>python</li>
+                        </ul>
+                    </li>
+                    <li class="block">
+                        <div class="title">Cơ sở dữ liệu</div>
+                        <ul class="desc">
+                            <li>Access</li>
+                            <li>SQL Server</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div><a href="web.html" target="_blank"><img src="/Images/html-logo.png"></a></div>
+                    <div><a href="css.html" target="_blank"><img src="/Images/css-logo.png"></a></div>
+                </div>
+                <div class="row">
+                    <div><a href="javascript.html" target="_blank"><img src="/Images/js-logo.png"></a></div>
+                    <div><a href="jquery.html" target="_blank"><img src="/Images/jquery-logo.png"></a></div>
+                </div>
+            </div>
+            <div class="right">
+                <ul>
+                    <p>Link Demo</p>
+                    <li><a href="/Demo-1/demo1.html" target="_blank">Demo 1</a></li>
+                    <li><a href="/Demo-2/demo2.html" target="_blank">Demo 2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">Coppyright 2023</div>
+    </div>
 </body>
 </html>
-
-
-

@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* header */
+header {
+    background-color: #749BC2;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top-nav h1 {
+    color: yellow;
+    text-shadow: 5px 5px 5px red;
+    line-height: 100px;
+    padding-left: 15px;
+}
+
+.top-nav p {
+    color: white;
+    line-height: 100px;
+    padding-right: 15px;
+}
+
+.bottom-nav {
+    height: 40px;
+    background-color: #35A29F;
+    text-align: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+.bottom-nav  li {
+    display: inline-block;
+    height: 40px;
+    width: 120px;
+    line-height: 40px;
+    background-color: #176B87;
+    position: relative;
+}
+
+.bottom-nav  li:hover {
+    background-color: #468B97;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
+
+.bottom-nav li:hover .sub-nav {
+    display: block;
+}
+
+.sub-nav {
+    display: none;
+    position: absolute;
+}
+
+.sub-nav > li {
+    color: black;
+    background-color: #176B87;
+    width: 120px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* content */
+.wapper-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+img:hover {
+    width: 150px;
+}
+
+img {
+    height: 100px;
+    width:100px;
+    transition: width 1s;
+}
+
+.content {
+    background-color: #A0BFE0;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 30%;
+    padding-top: 10px;
+    border-right: 1px solid white;
+    min-height: 300px;
+}
+
+.wapper-button {
+    margin: 20px;
+    text-align: center;
+}
+
+.left button {
+    padding: 5px;
+}
+
+.wapper-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.right {
+    width: 70%;
+    min-height: 300px;
+    position: relative;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.red-box {
+    background-color: red;
+}
+
+.blue-box {
+    background-color: blue;
+}
+
+.yellow-box {
+    background-color: yellow;
+}
+
+.green-box {
+    background-color: green;
+}
+
+.ball {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    top: 100px;
+    left: 100px;
+    position: absolute;
+}
+
+/* footer */
+footer {
+    height: 40px;
+    background-color: #749BC2;
+}
+
+footer p {
+    text-align: center;
+    line-height: 40px;
+    color: yellow;
+}

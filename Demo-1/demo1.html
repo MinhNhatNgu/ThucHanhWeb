@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo1.css">
+</head>
+<body>
+    <header>
+        <div id="top-nav">
+            <div id="name-page">
+                BÀI THI ỨNG DỤNG WEB
+            </div>
+            <div id="info">
+                MSSV : 2251012102 - Họ tên : Nguyễn Minh Nhật
+            </div>
+        </div>
+        <ul id="bottom-nav">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Các hãng xe</a>
+                <ul id="sub-nav">
+                    <li><a href="#">Ford</a></li>
+                    <li><a href="#">Honda</a></li>
+                    <li><a href="#">Toyota</a></li>
+                    <li><a href="#">Hyundai</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div id="container">
+        <div class="left">
+            <img src="car-red.jpeg" alt="">
+            <img src="car-white.jpeg" alt="">
+            <img src="car-blue.jpeg" alt="">
+            <img src="car-yellow.jpeg" alt="">
+        </div>
+        <div class="right">
+            <table>
+                <caption>THÔNG TIN ĐẶT HÀNG</caption>
+                <tr>
+                    <td>Loại xe</td>
+                    <td>
+                        <select id="LoaiXe" onchange="changeType()">
+                            <option value="car" selected>Ô tô</option>
+                            <option value="moto">Xe máy</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số lượng</td>
+                    <td>
+                        <input type="number" id="quantity" value="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Màu sắc</td>
+                    <td>
+                        <div class="red-box box" onclick="changeColor('red')"></div>
+                        <div class="blue-box box" onclick="changeColor('blue')"></div>
+                        <div class="yellow-box box" onclick="changeColor('yellow')"></div>
+                        <div class="white-box box" onclick="changeColor('white')"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <img src="car-red.jpeg" alt="" class="show-img">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="showInfo()">Đặt hàng</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="show-info"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer>
+        Coppyright 2022
+    </footer>
+    <script src="demo1.js">
+        
+    </script>
+</body>
+</html>

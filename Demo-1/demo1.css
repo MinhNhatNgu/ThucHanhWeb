@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #279EFF;
+}
+
+#top-nav {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+#info {
+    color:white;
+    line-height: 60px;
+    font-size: 1em;
+}
+
+#name-page {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 60px;
+    color: yellow;
+    text-shadow: 5px 5px 5px red;
+}
+
+#bottom-nav {
+    background-color: #9ED2BE;
+    height: 40px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+
+#bottom-nav li {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    background-color: #5B9A8B;
+    width: 120px;
+}
+
+#bottom-nav li:hover {
+    background-color: #7EAA92;
+}
+
+#bottom-nav li:hover #sub-nav {
+    display: block;
+}
+
+#bottom-nav li a {
+    text-decoration: none;
+    padding: 0 20px;
+    color: white;
+    font-size: 1em;
+}
+
+#sub-nav {
+    position: absolute;
+    display: none;
+}
+
+/* content */
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 30%;
+    background-color: #91C8E4;
+    margin-right: 2px;
+    min-height: 400px;
+}  
+
+.left img {
+    padding: 0 5%;
+    width: 90%;
+    height: 150px;
+}
+
+.right {
+    width: 70%;
+    min-height: 400px;
+    background-color: #91C8E4;
+}
+
+table {
+    width: 80%;
+    font-size: 1em;
+    border-collapse: collapse;
+    margin: 10% 10%;
+}
+
+td {
+    border: 1px solid black;
+    min-height: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+caption {
+    font-size: 1.5em;
+    color:red;
+    margin-bottom: 15px;
+}
+
+tr:nth-child(3) ~ tr {
+    text-align: center;
+}
+
+.left img {
+    transition: height 1s;
+}
+
+.left img:hover {
+    height: 200px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.red-box {
+    background-color: red;
+    border: 1px solid black;
+}
+
+.blue-box {
+    background-color: blue;
+    border: 1px solid black;
+}
+
+.yellow-box {
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.white-box {
+    background-color: white;
+    border: 1px solid black;
+}
+
+tr button {
+    padding: 5px;
+}
+
+footer {
+    background-color: #279EFF;
+    height: 40px;
+    color: yellow;
+    line-height: 40px;
+    font-size: 1em;
+    text-align: center;
+}

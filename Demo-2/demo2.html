@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo2.css">
+    <link rel="stylesheet" href="demo2.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div class="top-nav">
+                <h1>BÀI THI ỨNG DỤNG WEB</h1>
+                <p>MSSV:2251012102 - HọTên: Nguyễn Minh Nhật</p>
+            </div>
+            <ul class="bottom-nav">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Tuỳ chọn</a>
+                    <ul class="sub-nav">
+                        <li><input onchange="changeType(this.value)" type="radio" name="noneImg" id="" value="yes">Có hình</li>
+                        <li><input onchange="changeType(this.value)" checked type="radio" name="noneImg" id="" value="no">Không hình</li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <div class="container">
+            <div class="wapper-img">
+                <img onclick="changeImg(this.src)" src="hoa1.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa2.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa3.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa4.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa5.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa6.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa7.jpeg" alt="">
+                <img onclick="changeImg(this.src)" src="hoa8.jpeg" alt="">
+            </div>
+            <div class="content">
+                <div class="left">
+                    <div class="wapper-box">
+                        <div class="box red-box" onclick="changeColor('red')"></div>
+                        <div class="box blue-box" onclick="changeColor('blue')"></div>
+                        <div class="box yellow-box" onclick="changeColor('yellow')"></div>
+                        <div class="box green-box" onclick="changeColor('green')"></div>
+                    </div>
+                    <div class="wapper-button">
+                        <button onclick="ChuyenDong()">Start</button>
+                        <button onclick="Dung()">Stop</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="ball"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Coppyright 2023</p>
+        </footer>
+    </div>
+    <script src="demo2.js"></script>
+</body>
+</html>
